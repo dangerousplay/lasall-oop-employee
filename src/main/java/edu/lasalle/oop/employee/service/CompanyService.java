@@ -45,4 +45,8 @@ public class CompanyService {
     public void increaseSalary(String department, BigDecimal bigDecimal) {
         this.employeeRepository.increaseSalary(department, bigDecimal.doubleValue());
     }
+
+    public void increaseManagerSalary(BigDecimal bigDecimal) {
+        this.employeeRepository.increaseManagerSalary(bigDecimal.doubleValue());
+    }
 }

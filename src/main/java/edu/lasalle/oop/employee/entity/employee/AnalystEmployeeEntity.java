@@ -12,4 +12,28 @@ public class AnalystEmployeeEntity extends EmployeeEntity {
     public String getRole() {
         return "Analyst";
     }
+
+    public static AnalystEmployeeEntityBuilder builder() {
+        return AnalystEmployeeEntityBuilder.builder();
+    }
+
+    public static final class AnalystEmployeeEntityBuilder extends EmployeeEntity.EmployeeEntityBuilder {
+
+        private static AnalystEmployeeEntityBuilder builder() {
+            return new AnalystEmployeeEntityBuilder();
+        }
+
+        @Override
+        public EmployeeEntity build() {
+            final var employeeEntity = new AnalystEmployeeEntity();
+
+            employeeEntity.setId(id);
+            employeeEntity.setName(name);
+            employeeEntity.setSalary(salary);
+            employeeEntity.setDepartment(department);
+            employeeEntity.setCompany(company);
+
+            return employeeEntity;
+        }
+    }
 }

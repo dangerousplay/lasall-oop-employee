@@ -13,4 +13,28 @@ public class ManagerEntity extends EmployeeEntity {
     public String getRole() {
         return "Manager";
     }
+
+    public static ManagerEntityBuilder builder() {
+        return ManagerEntityBuilder.builder();
+    }
+
+    public static final class ManagerEntityBuilder extends EmployeeEntity.EmployeeEntityBuilder {
+
+        private static ManagerEntityBuilder builder() {
+            return new ManagerEntityBuilder();
+        }
+
+        @Override
+        public EmployeeEntity build() {
+            final var employeeEntity = new ManagerEntity();
+
+            employeeEntity.setId(id);
+            employeeEntity.setName(name);
+            employeeEntity.setSalary(salary);
+            employeeEntity.setDepartment(department);
+            employeeEntity.setCompany(company);
+
+            return employeeEntity;
+        }
+    }
 }

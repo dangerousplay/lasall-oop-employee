@@ -18,4 +18,9 @@ public interface EmployeeRepository extends PagingAndSortingRepository<EmployeeE
     @Query("UPDATE EmployeeEntity as e SET e.salary = e.salary * (1.0 + ?2) WHERE e.department = ?1")
     int increaseSalary(String department, double percent);
 
+    @Transactional
+    @Modifying
+    @Query("UPDATE ManagerEntity as e SET e.salary = e.salary * (1.0 + ?1)")
+    int increaseManagerSalary(double percent);
+
 }

@@ -96,14 +96,14 @@ public class EmployeeEntity {
         return EmployeeEntityBuilder.builder();
     }
 
-    public static final class EmployeeEntityBuilder {
-        private BigInteger id;
-        private String name;
-        private BigDecimal salary;
-        private String department;
-        private CompanyEntity company;
+    public static class EmployeeEntityBuilder {
+        protected BigInteger id;
+        protected String name;
+        protected BigDecimal salary;
+        protected String department;
+        protected CompanyEntity company;
 
-        private EmployeeEntityBuilder() {
+        public EmployeeEntityBuilder() {
         }
 
         private static EmployeeEntityBuilder builder() {
